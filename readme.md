@@ -97,13 +97,29 @@ laravel文件中，.env文件是不上传的，这里只是用来说明一个doc
 
 ### 获取项目
 ```
-git clone https://github.com/gaohongxiang/docker-compose-lnmp.git
+git clone https://github.com/gaohongxiang/docker-lnmp.git
 ```
+获取项目后可以把docker-lnmp目录改名，随意。
 
-### 切换目录
+### 添加阿里镜像加速器
+通过修改daemon配置文件/etc/docker/daemon.json来使用加速器
 ```
-cd docker-compose-lnmp
+sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+  "registry-mirrors": ["https://vym227em.mirror.aliyuncs.com"]
+}
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart docker
 ```
+这里的加速器是我注册的阿里云镜像仓库匹配的加速器，可以用。也可以换成自己的。
+
+### 切换到docker-compose.yml所在目录
+```
+cd docker-lnmp
+```
+如果获取项目后改了docker-lnmp目录的名字，这里就是切换到改了名字的目录。
 
 ### 启动容器
 ```
