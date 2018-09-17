@@ -15,7 +15,7 @@ services:
             - php
         restart: always
     php:
-        image: "gaohongxinag/lnmp-php:php7.2" # 使用自己配置的镜像文件
+        image: "gaohongxiang/lnmp-php:php7.2" # 使用自己配置的镜像文件
        #注意：php镜像上传到了docker hub上，image直接去pull此镜像。等同于下面的build句（指定php dockerfile所在的目录）。用哪一个都可以
        # build: ./php
         container_name: php

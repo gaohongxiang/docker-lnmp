@@ -115,11 +115,19 @@ sudo systemctl restart docker
 ```
 这里的加速器是我注册的阿里云镜像仓库匹配的加速器，可以用。也可以换成自己的。
 
+
 ### 切换到docker-compose.yml所在目录
 ```
 cd docker-lnmp
 ```
 如果获取项目后改了docker-lnmp目录的名字，这里就是切换到改了名字的目录。
+
+### 删除data目录下的readme文件
+因为github不能上传空目录，所以在data目录下临时存放了个readme文件。
+启动容器前要保持data目录为空，所以这里删除readme文件
+```
+sudo rm -rf mysql/data/readme.md
+```
 
 ### 启动容器
 ```
