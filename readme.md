@@ -97,7 +97,7 @@ laravel文件中，.env文件是不上传的，这里只是用来说明一个doc
 
 ### 获取项目
 ```
-git clone https://github.com/gaohongxiang/docker-lnmp.git
+sudo git clone https://github.com/gaohongxiang/docker-lnmp.git
 ```
 获取项目后可以把docker-lnmp目录改名，随意。
 
@@ -124,7 +124,7 @@ cd docker-lnmp
 
 ### 删除data目录下的readme文件
 因为github不能上传空目录，所以在data目录下临时存放了个readme文件。
-启动容器前要保持data目录为空，所以这里删除readme文件
+启动容器前要保持data目录为空，否则启动mysql容器报错，或一直处于restarting状态。所以这里删除readme文件
 ```
 sudo rm -rf mysql/data/readme.md
 ```
@@ -142,8 +142,11 @@ docker-compose up -d
 
 ### 部署项目
 www目录为项目目录，这部分根据自己的情况来完善
+
 之前部署过一个博客，如果感兴趣可以参考[个人博客部署](https://github.com/gaohongxiang/www.blockchant.cn.git)
+
 部署博客也写过一个文档，参考[个人博客部署文档](http://www.blockchant.cn/tutorials/blog)
+
 
 
 # docker部署环境过程中的坑
