@@ -138,9 +138,17 @@ docker-compose up -d
 [docker命令](http://www.blockchant.cn/tutorials/docker/43/docker-ming-ling)
 [docker-compose命令](http://www.blockchant.cn/tutorials/docker/95/compose-ming-ling)
 
-# 部署过程中的坑
+容器启动起来后整个此项目就结束了。剩下的就是在此环境上部署项目了
 
-#### mysql容器一直出入restarting的状态。
+### 部署项目
+www目录为项目目录，这部分根据自己的情况来完善
+之前部署过一个博客，如果感兴趣可以参考[个人博客部署](https://github.com/gaohongxiang/www.blockchant.cn.git)
+部署博客也写过一个文档，参考[个人博客部署文档](http://www.blockchant.cn/tutorials/blog)
+
+
+# docker部署环境过程中的坑
+
+### mysql容器一直处于restarting的状态。
 
 这种情况一般出现在一次部署不成功，又重新启动容器的情况。
 
@@ -148,7 +156,7 @@ docker-compose up -d
 如果docker-compose.yml文件中自定义了顶级volumes，那么必须把此volume删除，然后再启动容器。否则也会报错。
 删除volume操作详见docker指令。
 
-#### mysql连接拒绝问题
+### mysql连接拒绝问题
 这里的连接问题不是常规问题，与数据卷的挂载有关，详情参考[无法连接到mysql数据库：访问被拒绝 ](https://github.com/docker-library/mysql/issues/51)
 
 
