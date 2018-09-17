@@ -116,13 +116,17 @@ docker-compose up -d
 
 # 部署过程中的坑
 
-mysql容器一直出入restarting的状态。
+#### mysql容器一直出入restarting的状态。
 
 这种情况一般出现在一次部署不成功，又重新启动容器的情况。
 
 启动容器的时候本机下/data目录（挂载到mysql容器中）必须是空的。否则会报错。
 如果docker-compose.yml文件中自定义了顶级volumes，那么必须把此volume删除，然后再启动容器。否则也会报错。
 删除volume操作详见docker指令。
+
+#### mysql连接拒绝问题
+这里的连接问题不是常规问题，与数据卷的挂载有关，详情参考[无法连接到mysql数据库：访问被拒绝 ](https://github.com/docker-library/mysql/issues/51)
+
 
 # 一些使用技巧
 
