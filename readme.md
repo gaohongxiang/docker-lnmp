@@ -165,7 +165,33 @@ www目录为项目目录，这部分根据自己的情况来完善
 
 # 一些使用技巧
 
-备份好的sql文件www_blockchant_cn_080908.sql，在mysql容器里www_blockchant_cn数据库中还原步骤
+#### composer安装vendor目录
+
+php的包管理器composer编译在了php镜像里。如果需要用到composer的话需要进入php容器才能使用。
+比如拉取本人博客项目后，需要安装laravel的vendor目录，这时就需要用到composer
+
+步骤如下
+
+1、进入php容器
+```
+docker exec -it php bash
+```
+
+2、进入application目录
+```
+cd /application
+```
+
+3、安装vendor目录
+```
+composer install --ignore-platform-reqs
+```
+
+安装好后vendor会在宿主机的www目录下出现
+
+#### 备份好的sql文件，在mysql容器里的数据库中还原步骤
+
+如www_blockchant_cn_080908.sql文件还原进www_blockchant_cn数据库
 
 1、备份的sql文件放在本机mysql/data目录下
 
