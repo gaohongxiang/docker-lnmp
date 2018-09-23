@@ -11,6 +11,10 @@ P：php7.2
 
 如果还不太清楚docker，请参考本人博客[docker](http://www.blockchant.cn/tutorials/docker/71/docker-jian-jie)相关内容
 
+朋友介绍的项目，非常完善了：[laradock](http://laradock.io/)
+
+Laradock在Laravel社区中是众所周知的，因为该项目始于专注于在Docker上运行Laravel项目。后来由于PHP社区的大量采用，它开始支持其他PHP项目，如Symfony，CodeIgniter，WordPress，Drupal ......
+
 # 必备工具
 
 ## docker 
