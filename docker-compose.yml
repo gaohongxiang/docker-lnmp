@@ -43,7 +43,9 @@ services:
             - MYSQL_USER=root
             - MYSQL_ROOT_PASSWORD=1
             - MYSQL_PASSWORD=1
-            - MYSQL_DATABASE=www_blockchant_cn 
+            - MYSQL_DATABASE=www_blockchant_cn
+        ports:
+            - "3306:3306" # 本机3306端口映射到mysql容器的3306端口
         networks:
             - backend
         restart: always
